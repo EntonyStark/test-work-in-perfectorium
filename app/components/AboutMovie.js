@@ -17,11 +17,11 @@ class aboutMovie extends React.Component {
 	render = () => (
 		<div className="box-header">
 			{
-				this.props.dataArr.map(function(element, index) {
+				this.props.dataArr.map((element, index) => {
 					return <Item 
 						key={index}
 						id={element.id.videoId}
-						onClick={ () => ( localStorage.setItem('videoId', element.id.videoId) ) } // в данном случае в localStorage помещается id 
+						onClick={ () => ( this.props.newRequest(element.id.videoId) ) } // в данном случае в localStorage помещается id 
 						description={element.snippet.description}                                 // и мы можем его в дальнейшем использовать для любых целей
 						src={element.snippet.thumbnails.default.url}                              // т.к. reduser хранит массив c сервера
 						title={element.snippet.title}
