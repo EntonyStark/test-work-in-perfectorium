@@ -21,9 +21,9 @@ class aboutMovie extends React.Component {
 					return <Item 
 						key={index}
 						id={element.id.videoId}
-						onClick={ () => ( this.props.newRequest(element.id.videoId) ) } // в данном случае в localStorage помещается id 
-						description={element.snippet.description}                                 // и мы можем его в дальнейшем использовать для любых целей
-						src={element.snippet.thumbnails.default.url}                              // т.к. reduser хранит массив c сервера
+						onClick={ () => ( this.props.newRequest(element.id.videoId) ) }
+						description={element.snippet.description}                                 
+						src={element.snippet.thumbnails.default.url}                              
 						title={element.snippet.title}
 						data={element.snippet.publishedAt}
 					/>;
